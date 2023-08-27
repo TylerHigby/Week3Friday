@@ -32,9 +32,14 @@ export class NotesController {
   }
 
   saveNote() {
-    let textAreaElem = document.querySelector('textarea')
-    let updatedBody = textAreaElem.value
-    notesService.saveNote
+    // let textAreaElem = document.querySelector('textAreaElem')
+    const form = window.event.target
+    const formData = getFormData(form)
+    console.log(formData)
+    // console.log(textAreaElem)
+    //let updatedBody = textAreaElem.value
+    notesService.saveNote(formData)
+
   }
 
   createNote() {

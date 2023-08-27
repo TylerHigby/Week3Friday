@@ -14,11 +14,26 @@ class NotesService {
     AppState.activeNote = foundNote
   }
 
-  saveNote(updatedBody) {
+  saveNote(formData) {
     let active = AppState.activeNote
-    active.body = updatedBody
+    let position = 0
+    for (let i = 0; i < AppState.notes.length; i++) {
+      if (AppState.notes[i].id == active.id) {
+        position = i + 1
+      }
+    }
+    console.log(AppState.notes[0].id)
+    console.log(active.id)
+    active.location = position
+    active.body = formData.body
+    active.title = formData.title
+    active.color = formData.colorS
+    console.log(active)
+
     _saveNotes()
   }
+
+
 
   deleteNote(noteId) {
     let foundNote = AppState.notes.find(n => n.id == noteId)
@@ -29,9 +44,14 @@ class NotesService {
 
 
   createNote(formData) {
+    //console.log(formData)
+    let location = AppState.notes.length + 1
+    // console.log(length)
+    formData.location = `${location}`
+    // console.log(formData)
     let newNote = new Note(formData)
     AppState.notes.push(newNote)
-    console.log(AppState.notes)
+    //console.log(AppState.notes)
     AppState.emit('notes')
     _saveNotes()
   }

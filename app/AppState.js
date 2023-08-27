@@ -5,10 +5,12 @@ import { isValidProp } from "./utils/isValidProp.js"
 import { loadState } from "./utils/Store.js"
 
 class ObservableAppState extends EventEmitter {
+  page = ''
 
-
-
+  /**@type {import('./models/Note.js').Value[]} */
   notes = loadState('notes', [Note])
+  /** @type {import('./models/Value.js').Value[]} */
+  values = loadState('values', [Value])
   // notes = [
   //   new Note({
   //     title: "Example",
@@ -16,12 +18,12 @@ class ObservableAppState extends EventEmitter {
   //     color: "red"
   //   })
   // ]
-  /**@type {import('./models/Note.js').Value[]} */
-  activeNote = null
-  page = ''
 
-  /** @type {import('./models/Value.js').Value[]} */
-  values = loadState('values', [Value])
+  /** @type {import('./models/Note.js').Case|null} */
+  activeNote = null
+
+
+
 
   // NOTE Used to load initial data
   init() {
