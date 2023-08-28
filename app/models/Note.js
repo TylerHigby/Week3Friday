@@ -17,11 +17,11 @@ export class Note {
 
   get ListTemplate() {
     return /*html*/ `<div  class="my-2 border border-primary">
-  <span>${this.location}</span>
-  <span style="color:${this.color}">Title: ${this.title}</span>
-  <span>Body: ${this.body}</span>
-  <span>List Date: ${this.listingDate}</span>
-  <span>Updated Date: ${this.updatedDate}</span>
+  <div><span>${this.location}</span></div>
+  <div><span style="color:${this.color}">Title: ${this.title}</span></div>
+  <div><span>Body: ${this.body}</span></div>
+  <div><span>List Date: ${this.listingDate.toLocaleDateString()}</span></div>
+  <div><span>Updated Date: ${this.updatedDate.toLocaleDateString()}</span></div>
   <button onclick="app.NotesController.setActive('${this.id}')" class="btn btn-info">edit</button>
   <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" >delete<i class="mdi mdi-recycle"></i></button>
       </div>`
