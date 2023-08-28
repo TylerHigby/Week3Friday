@@ -19,7 +19,7 @@ export class Note {
     return /*html*/ `<div  class="bg-light my-2 border border-primary">
   <div><span><b>${this.location}</b></span></div>
   <div><span><b>Title:</b> ${this.title}</span></div>
-  <div><span><b>Body:</b> ${this.body}</span></div>
+  <div class="wrap" ><span><b>Body:</b> ${this.body}</span></div>
   <div><span><b>List Date:</b> ${this.listingDate.toLocaleDateString()}</span></div>
   <div><span><b>Updated Date:</b> ${this.updatedDate.toUTCString()}</span></div>
   <button style="background-color:${this.color}"  onclick="app.NotesController.setActive('${this.id}')" class="btn text-light">edit</button>
