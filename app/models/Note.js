@@ -23,7 +23,7 @@ export class Note {
   <div><span><b>List Date:</b> ${this.listingDate.toLocaleDateString()}</span></div>
   <div><span><b>Updated Date:</b> ${this.updatedDate.toUTCString()}</span></div>
   <button style="background-color:${this.color}"  onclick="app.NotesController.setActive('${this.id}')" class="btn text-light">edit</button>
-  <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" >delete<i class="mdi mdi-recycle"></i></button>
+  <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" >delete<i class="mdi mdi-recycle" ></i></button>
       </div>`
   }
 
