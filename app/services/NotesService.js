@@ -24,10 +24,11 @@ class NotesService {
     }
     console.log(AppState.notes[0].id)
     console.log(active.id)
+
     active.location = position
     active.body = formData.body
     active.title = formData.title
-    active.color = formData.colorS
+    active.color = formData.color
     console.log(active)
 
     _saveNotes()

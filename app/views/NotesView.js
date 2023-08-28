@@ -31,8 +31,8 @@ Add Note! <i class="mdi mdi-note"></i>
 
   
           <!-- NOTE make sure that your submit button is INSIDE of your form tag -->
-          <div class="text-end">
-            <button type="submit" class="btn btn-info">Create Note</button>
+          <div>
+            <button data-bs-toggle="collapse" data-bs-target="#noteFormCollapse" type="submit" class="btn btn-success">Create Note</button>
   
           </div>
   </form>

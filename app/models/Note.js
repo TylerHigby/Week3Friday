@@ -17,18 +17,18 @@ export class Note {
 
   get ListTemplate() {
     return /*html*/ `<div  class="bg-light my-2 border border-primary">
-  <div><span>${this.location}</span></div>
-  <div><span style="color:${this.color}">Title: ${this.title}</span></div>
-  <div><span>Body: ${this.body}</span></div>
-  <div><span>List Date: ${this.listingDate.toLocaleDateString()}</span></div>
-  <div><span>Updated Date: ${this.updatedDate.toUTCString()}</span></div>
-  <button onclick="app.NotesController.setActive('${this.id}')" class="btn btn-info">edit</button>
+  <div><span><b>${this.location}</b></span></div>
+  <div><span><b>Title:</b> ${this.title}</span></div>
+  <div><span><b>Body:</b> ${this.body}</span></div>
+  <div><span><b>List Date:</b> ${this.listingDate.toLocaleDateString()}</span></div>
+  <div><span><b>Updated Date:</b> ${this.updatedDate.toUTCString()}</span></div>
+  <button style="background-color:${this.color}"  onclick="app.NotesController.setActive('${this.id}')" class="btn text-light">edit</button>
   <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" >delete<i class="mdi mdi-recycle"></i></button>
       </div>`
   }
 
   get activeTemplate() {
-    return /*html*/ ` <div class="container-fluid border border-primary">
+    return /*html*/ ` <div style="background-color:${this.color}" class="container-fluid border border-primary">
     <section class="row">
 
   
@@ -55,7 +55,7 @@ export class Note {
   
           <!-- NOTE make sure that your submit button is INSIDE of your form tag -->
           <div class="text-end">
-            <button type="submit" class="btn btn-info">Create Note</button>
+            <button type="submit" class="btn btn-info">Edit Note</button>
   
           </div>
         </form>
